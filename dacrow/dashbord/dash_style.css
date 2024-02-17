@@ -1,0 +1,2097 @@
+@font-face {
+    font-family: poppins_regular;
+    src: url(fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppins_bold;
+    src: url(fonts/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: poppins_light;
+    src: url(fonts/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: alumni;
+    src: url(fonts/AlumniSansPinstripe-Regular.ttf);
+}
+
+@font-face {
+    font-family: josefin;
+    src: url(fonts/JosefinSlab-VariableFont_wght.ttf);
+}
+
+:root {
+    --mainblack: #1d1d1b;
+    --maingray: #ebebeb;
+    --mainorange: #ed4300;
+    --secondblack: #2c2522;
+    --secondgray: #cbcbcb;
+    --secondorange: #f19f7f;
+    --boldfont: poppins_bold;
+    --mainfont: poppins_regular;
+    --lightfont: poppins_light;
+    --lightfontA: alumni;
+    --lightfontJ: josefin;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #080808;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--mainorange);
+    border-radius: 10px;
+}
+
+body {
+    background: var(--mainblack);
+}
+
+.scrolltotop {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    background-color: var(--mainorange);
+    padding: 5px;
+    font-size: 22px;
+    display: none;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all ease .3s;
+    color: var(--mainblack);
+    z-index: 10;
+}
+
+.scrolltotop:hover {
+    transform: scaleY(1.1);
+    background-color: var(--maingray);
+    color: var(--secondblack);
+}
+
+.back {
+    font-size: 20px;
+    position: absolute;
+    left: 30px;
+    top: 14%;
+    display: flex;
+    align-items: center;
+    font-family: var(--mainfont);
+    color: var(--mainblack);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.back ion-icon {
+    font-size: 25px;
+    margin-right: 7px;
+}
+
+.back:hover {
+    color: var(--mainorange);
+}
+
+textarea {
+    resize: none;
+    width: 85%;
+    height: 150px;
+}
+
+/*----------about------------*/
+.about {
+    width: 98%;
+    position: relative;
+    margin: auto;
+}
+
+/*----------dashboard------------*/
+.dashboard {
+    background-color: var(--maingray);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+/*----------dashboard-menu------------*/
+.dashboard .menu {
+    width: 20%;
+    height: 100%;
+    background-color: var(--mainblack);
+    padding: 15px 8px;
+    transition: all ease .4s;
+    position: absolute;
+    left: 0;
+}
+
+.menu .menu_logout {
+    background-color: var(--maingray);
+    position: absolute;
+    top: 82%;
+    border-radius: 20px;
+    padding: 10px;
+    width: 280px;
+}
+
+.menu .menu_logout p {
+    font-size: 16px;
+    font-family: var(--mainfont);
+    color: var(--mainblack);
+}
+
+.menu .menu_logout p span {
+    font-family: var(--boldfont);
+    color: var(--mainorange);
+}
+
+.menu .menu_logout button {
+    width: 100%;
+    border-radius: 12px;
+    height: 30px;
+    margin-top: 10px;
+    border: none;
+    font-size: 14px;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    background-color: var(--mainorange);
+    cursor: pointer;
+}
+
+.menu .title {
+    display: flex;
+    padding: 5px 10px;
+    margin-bottom: 35px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu .title img {
+    width: 50px;
+    height: auto;
+}
+
+.menu .title h1 {
+    font-family: var(--boldfont);
+    font-size: 25px;
+    color: var(--maingray);
+}
+
+.menu .menu-grids {
+    margin-bottom: 15px;
+}
+
+.menu .menu-grids a {
+    background-color: var(--maingray);
+    padding: 12px 30px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    font-family: var(--boldfont);
+    font-size: 18px;
+    color: var(--mainblack);
+    cursor: pointer;
+    transition: .3s all ease;
+    width: 100%;
+    text-decoration: none;
+    display: block;
+}
+
+.menu .menu-grids a:hover {
+    background-color: var(--secondorange);
+    color: var(--mainblack);
+}
+
+.menu .menu-grids .products-grids,
+.menu .menu-grids .admins-grids {
+    display: none;
+}
+
+.menu .menu-grids .products-grids a,
+.menu .menu-grids .admins-grids a {
+    background-color: var(--mainorange);
+    color: var(--maingray);
+    padding: 7px 15px;
+}
+
+.menu .menu-grids .products-grids a:hover,
+.menu .menu-grids .admins-grids a:hover {
+    background-color: var(--maingray);
+    color: var(--mainblack);
+}
+
+.dashboard .border {
+    border-right: 4px solid var(--mainorange);
+    height: 100vh;
+    position: absolute;
+    left: 20%;
+}
+
+/*----------dashboard-container------------*/
+.dashboard-container {
+    width: 80%;
+    height: 100%;
+    transition: all ease .4s;
+    position: absolute;
+    left: 20%;
+}
+
+.dashboard-container h2 {
+    text-align: right;
+    font-family: var(--boldfont);
+    font-size: 18px;
+    margin: 15px;
+    margin-right: 20px;
+
+}
+
+.dashboard-container h2 span {
+    color: var(--mainorange);
+}
+
+.dashboard-container .menu-dash-icon {
+    position: fixed;
+    left: 20%;
+    top: 10px;
+    color: var(--mainorange);
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.dashroot {
+    width: 97%;
+    background-color: var(--mainblack);
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: auto;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+.dashroot p {
+    font-family: var(--boldfont);
+    font-size: 15px;
+    color: var(--maingray);
+}
+
+.dashroot p span {
+    font-family: var(--boldfont);
+    font-size: 14px;
+}
+
+.dash-box {
+    width: 97%;
+    height: 85%;
+    background-color: var(--secondgray);
+    margin: 5px auto;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.dash-box .users,
+.dash-box .stock,
+.dash-box .manage_products,
+.dash-box .add_product,
+.dash-box .orders_list,
+.dash-box .contact_mssg,
+.dash-box .manage_admin,
+.dash-box .add_admin,
+.dash-box .home_dash {
+    display: block;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+/*----------dashboard_home------------*/
+
+.home_dash .home_header {
+    width: 100%;
+    height: 22%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*----------dashboard_home_income------------*/
+
+.home_header .home_header_income {
+    width: 30%;
+    height: 100%;
+    background-color: var(--mainblack);
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.home_header_income h4 {
+    font-size: 15px;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    margin-bottom: 13px;
+}
+
+.home_header_income h1 {
+    font-size: 20px;
+    font-family: var(--mainfont);
+    color: rgb(35, 168, 35);
+    text-align: center;
+    margin-bottom: 13px;
+}
+
+.home_header_income h1 span {
+    font-size: 25px;
+    color: var(--maingray);
+}
+
+.home_header_income p {
+    text-align: right;
+    font-size: 15px;
+    color: var(--maingray);
+    font-family: var(--mainfont);
+}
+
+.home_header_income p span {
+    color: var(--mainorange);
+}
+
+/*----------dashboard_home_orders------------*/
+.home_header .home_header_orders {
+    width: 49%;
+    height: 100%;
+    background-color: var(--mainblack);
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+
+.home_header_orders h1 {
+    font-family: var(--boldfont);
+    font-size: 18px;
+    color: var(--maingray);
+}
+
+.home_header_orders .orders_statut {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.orders_statut div {
+    text-align: center;
+    padding: 5px;
+    border-radius: 15px;
+    width: 32%;
+}
+
+.orders_statut .inprogress {
+    background-color: rgb(247, 116, 0);
+}
+
+.orders_statut .accepted {
+    background-color: rgb(110, 221, 240)
+}
+
+.orders_statut .delivered {
+    background-color: rgb(29, 184, 29)
+}
+
+.orders_statut h2 {
+    font-size: 25px;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    margin: 0;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.orders_statut p {
+    font-size: 16px;
+    font-family: var(--mainfont);
+    color: var(--maingray);
+}
+
+/*----------dashboard_home_contact------------*/
+.home_header .home_header_contact {
+    width: 19%;
+    height: 100%;
+    background-color: var(--mainblack);
+    padding: 15px;
+    border-radius: 20px;
+}
+
+.home_header_contact h1 {
+    font-size: 16px;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+}
+
+.home_header_contact .contact_num {
+    background-color: var(--secondorange);
+    border-radius: 50%;
+    padding: 5px;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    position: relative;
+    margin: 15px auto;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 5px var(--maingray);
+}
+
+.home_header_contact .contact_num ion-icon {
+    width: 25px;
+    height: 25px;
+    color: red;
+    position: absolute;
+    right: 70%;
+    bottom: 1%;
+}
+
+/*----------dashboard_home_users_num------------*/
+.home_dash .home_middle {
+    width: 100%;
+    height: 48%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home_middle .home_middle_users_top3 {
+    height: 100%;
+    width: 63%;
+}
+
+.home_middle_users_top3 .home_middle_users {
+    width: 100%;
+    height: 48%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home_middle_users .home_middle_users_num {
+    background-color: var(--mainblack);
+    border-radius: 20px;
+    height: 100%;
+    width: 40%;
+    padding: 15px;
+}
+
+.home_middle_users_num h4 {
+    font-size: 16px;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    margin-bottom: 10px;
+}
+
+.home_middle_users_num h1 {
+    font-size: 22px;
+    font-family: var(--mainfont);
+    color: var(--mainorange);
+    margin-bottom: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home_middle_users_num h1 span {
+    font-size: 25px;
+    color: var(--maingray);
+    margin-right: 3px;
+}
+
+.home_middle_users_num p {
+    font-size: 14px;
+    font-family: var(--mainfont);
+    color: var(--maingray);
+    text-align: right;
+}
+
+.home_middle_users_num p span {
+    color: var(--mainorange);
+}
+
+/*----------dashboard_home_users_gender------------*/
+.home_middle_users .home_middle_users_gender {
+    background-color: var(--mainblack);
+    border-radius: 20px;
+    height: 100%;
+    width: 59%;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.home_middle_users_gender h4 {
+    color: var(--maingray);
+    font-family: var(--boldfont);
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.home_middle_users_gender .gender_key {
+    width: 30%;
+}
+
+.gender_key div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-family: var(--mainfont);
+    font-size: 14px;
+    color: var(--maingray);
+}
+
+.gender_key .male sup {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(9, 99, 115);
+    margin-right: 7px;
+}
+
+.gender_key .female sup {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(217, 1, 76);
+    margin-right: 7px;
+}
+
+.gender_key .nospecified sup {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+    margin-right: 7px;
+}
+
+.home_middle_users_gender .gender_apparent {
+    width: 58%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gender_apparent .appa-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gender_apparent .sec-circle {
+    width: 70px;
+    height: 70px;
+    background-color: var(--mainblack);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 5;
+}
+
+/*----------dashboard_home_top3------------*/
+.home_middle_users_top3 .home_middle_top3 {
+    width: 100%;
+    height: 48%;
+    background-color: var(--mainblack);
+    padding: 7px 15px;
+    padding-bottom: 0;
+    border-radius: 20px;
+}
+
+.home_middle_top3 h4 {
+    font-family: var(--boldfont);
+    font-size: 15px;
+    color: var(--maingray);
+}
+
+.home_middle_top3 p {
+    font-family: var(--mainfont);
+    font-size: 14px;
+    color: var(--maingray);
+    text-align: right;
+}
+
+.home_middle_top3 p span {
+    color: var(--mainorange);
+}
+
+.home_middle_top3 .top3-container {
+    height: 60%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.top3-container .top3-box {
+    width: 100%;
+    background-color: var(--secondgray);
+    border-radius: 15px;
+    padding: 2px 5px;
+    display: flex;
+}
+
+.top3-box .top3-box-left {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 100%;
+    margin-right: 10px;
+}
+
+.top3-box-left img {
+    height: 75px;
+    width: auto;
+    border-radius: 15px;
+}
+
+.top3-box .top3-box-right {
+    height: 100%;
+    margin-top: 5px;
+}
+
+.top3-box h5 {
+    font-family: var(--mainfont);
+    color: var(--mainblack);
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+    height: 20%;
+}
+
+.top3-box h2 {
+    font-family: var(--mainfont);
+    color: var(--mainblack);
+    font-size: 12px;
+    margin: 5px 0;
+    padding: 0;
+    text-align: left;
+}
+
+.top3-box p {
+    font-family: var(--mainfont);
+    color: var(--mainblack);
+    font-size: 12px;
+    margin: 3px 0;
+    padding: 0;
+    text-align: left;
+}
+
+/*----------dashboard_middle_products_num------------*/
+.home_middle .home_middle_products {
+    height: 100%;
+    width: 36%;
+}
+
+.home_middle_products .home_middle_products_num {
+    background-color: var(--mainblack);
+    border-radius: 20px;
+    width: 100%;
+    height: 49%;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.home_middle_products_num h4 {
+    font-size: 15px;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    margin-bottom: 13px;
+}
+
+.home_middle_products_num h1 {
+    font-size: 22px;
+    font-family: var(--mainfont);
+    color: var(--mainorange);
+    text-align: center;
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home_middle_products_num h1 span {
+    font-size: 25px;
+    color: var(--maingray);
+    margin-right: 5px;
+}
+
+.home_middle_products_num p {
+    text-align: right;
+    font-size: 15px;
+    color: var(--maingray);
+    font-family: var(--mainfont);
+}
+
+.home_middle_products_num p span {
+    color: var(--mainorange);
+}
+
+/*----------dashboard_middle_products_selled------------*/
+.home_middle_products .home_middle_products_selled {
+    background-color: var(--mainblack);
+    border-radius: 20px;
+    width: 100%;
+    height: 49%;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+.home_middle_products_selled h4 {
+    font-size: 15px;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    margin-bottom: 13px;
+}
+
+.home_middle_products_selled h1 {
+    font-size: 22px;
+    font-family: var(--mainfont);
+    color: var(--mainorange);
+    text-align: center;
+    margin-bottom: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home_middle_products_selled h1 span {
+    font-size: 25px;
+    color: var(--maingray);
+    margin-right: 5px;
+}
+
+.home_middle_products_selled p {
+    text-align: right;
+    font-size: 15px;
+    color: var(--maingray);
+    font-family: var(--mainfont);
+}
+
+.home_middle_products_selled p span {
+    color: var(--mainorange);
+}
+
+
+/*----------dashboard_middle_footer-----------*/
+.home_dash .home_footer {
+    width: 100%;
+    height: 27%;
+    background-color: var(--mainblack);
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.home_footer h4 {
+    font-size: 15px;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    margin-bottom: 13px;
+}
+
+.products-ruptured {
+    width: 100%;
+    overflow-y: scroll;
+    height: 70%;
+    border-radius: 20px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.products-ruptured::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--secondgray);
+    border-radius: 10px;
+}
+
+.products-ruptured::-webkit-scrollbar-thumb {
+    background: var(--mainorange);
+    border-radius: 10px;
+}
+
+.products-ruptured .rup_container {
+    background-color: var(--maingray);
+    width: 100%;
+    display: flex;
+    height: 80px;
+    padding: 2px 7px;
+    border-radius: 15px;
+}
+
+.rup_container .rup_container_left {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 5px;
+}
+
+.rup_container_left img {
+    height: 70px;
+    border-radius: 15px;
+}
+
+.rup_container .rup_container_right {
+    height: 100%;
+    margin-top: 7px;
+}
+
+.rup_container_right h6 {
+    font-family: var(--boldfont);
+    font-size: 10px;
+    color: var(--mainblack);
+    margin-bottom: 5px;
+}
+
+.rup_container_right h4 {
+    font-family: var(--mainfont);
+    font-size: 13px;
+    color: var(--mainblack);
+    padding: 0;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.rup_container_right p {
+    font-family: var(--lightfont);
+    font-size: 13px;
+    color: var(--mainblack);
+}
+
+/*----------dashboard_users------------*/
+.users {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.users::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--maingray);
+    border-radius: 10px;
+}
+
+.users::-webkit-scrollbar-thumb {
+    background: var(--mainblack);
+    border-radius: 10px;
+}
+
+.users table {
+    width: 100%;
+    text-align: left;
+}
+
+.users table thead tr th {
+    font-family: var(--boldfont);
+    font-size: 16px;
+    padding-bottom: 15px;
+}
+
+.users table tbody tr td {
+    font-family: var(--mainfont);
+    font-size: 16px;
+    padding-bottom: 8px;
+}
+
+.users table tbody tr td form button {
+    height: 25px;
+    width: 90px;
+    border-radius: 12px;
+    background-color: var(--mainorange);
+    color: var(--maingray);
+    border: none;
+    font-family: var(--boldfont);
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+.users table tbody tr td form button:hover {
+    background-color: var(--mainblack);
+    color: var(--maingray);
+}
+
+.users table tbody tr td form a {
+    height: 25px;
+    border-radius: 12px;
+    background-color: var(--mainorange);
+    color: var(--maingray);
+    border: none;
+    font-family: var(--boldfont);
+    cursor: pointer;
+    transition: all ease .3s;
+    text-decoration: none;
+    padding: 2px 15px;
+    font-size: 14px;
+}
+
+.users table tbody tr td form a:hover {
+    background-color: var(--mainblack);
+    color: var(--maingray);
+}
+
+
+/*--------dashbord_user_details-----------*/
+.user_details {
+    width: 450px;
+    height: 600px;
+    position: relative;
+    margin: auto;
+    margin-top: 10px;
+    background-color: var(--mainblack);
+    border-radius: 20px;
+    padding: 25px;
+}
+
+.user_details .user_id_username {
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user_id_username h4 {
+    font-family: var(--boldfont);
+    font-size: 18px;
+    color: var(--mainblack);
+    background-color: var(--maingray);
+    border-radius: 15px;
+    width: 25%;
+    padding: 3px 2px;
+    text-align: center;
+}
+
+.user_id_username h4 span {
+    color: var(--mainorange);
+}
+
+.user_id_username h5 {
+    font-family: var(--boldfont);
+    font-size: 16px;
+    color: var(--mainblack);
+    background-color: var(--maingray);
+    border-radius: 15px;
+    width: 65%;
+    padding: 3px 2px;
+    text-align: center;
+}
+
+.user_id_username h5 span {
+    color: var(--mainorange);
+}
+
+.user_details button {
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    height: 30px;
+    background-color: var(--mainorange);
+    color: var(--maingray);
+    font-family: var(--mainfont);
+    font-size: 15px;
+    margin-top: 17px;
+    cursor: pointer;
+    transition: .3s all ease;
+    padding: 3px 2px;
+}
+
+.user_details button:hover {
+    background-color: var(--maingray);
+    color: var(--mainblack);
+}
+
+.user_details h3 {
+    font-family: var(--boldfont);
+    font-size: 16px;
+    color: var(--mainblack);
+    background-color: var(--maingray);
+    border-radius: 15px;
+    width: 100%;
+    padding: 3px 20px;
+    margin-bottom: 15px;
+}
+
+.user_details h3 span {
+    color: var(--mainorange);
+}
+
+
+/*----------dashboard_stock------------*/
+.dash-box .stock {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.stock .onstock-side {
+    width: 49.5%;
+    background-color: var(--maingray);
+    border-radius: 20px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.stock .notonstock-side {
+    width: 49.5%;
+    background-color: var(--maingray);
+    border-radius: 20px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.onstock-side::-webkit-scrollbar,
+.notonstock-side::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--secondgray);
+    border-radius: 10px;
+}
+
+.onstock-side::-webkit-scrollbar-thumb,
+.notonstock-side::-webkit-scrollbar-thumb {
+    background: var(--secondorange);
+    border-radius: 10px;
+}
+
+.onstock-side table,
+.notonstock-side table {
+    width: 100%;
+}
+
+.onstock-side table thead,
+.notonstock-side table thead {
+    background-color: var(--secondorange);
+    color: var(--maingray);
+    font-family: var(--boldfont);
+    font-size: 15px;
+}
+
+.onstock-side table thead th,
+.notonstock-side table thead th {
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.onstock-side table tbody th,
+.notonstock-side table tbody th {
+    padding: 5px;
+    border-radius: 10px;
+    background-color: var(--mainblack);
+    color: var(--maingray);
+    font-family: var(--boldfont);
+    font-size: 13px;
+}
+
+.onstock-side table tbody td,
+.notonstock-side table tbody td {
+    padding: 5px;
+    font-family: var(--mainfont);
+    font-size: 13px;
+}
+
+/*----------dashboard_manage-products------------*/
+.dash-box .products_manager {
+    padding: 10px;
+    width: 100%;
+    background-color: var(--maingray);
+    border-radius: 20px;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.products_manager::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--secondgray);
+    border-radius: 10px;
+}
+
+.products_manager::-webkit-scrollbar-thumb {
+    background: var(--secondorange);
+    border-radius: 10px;
+}
+
+.products_manager .search_bar {
+    background-color: var(--mainblack);
+    border-radius: 15px;
+    padding: 4px 10px;
+    width: 100%;
+    position: relative;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.search_bar h3 {
+    display: flex;
+    align-items: center;
+    color: var(--maingray);
+    font-family: var(--boldfont);
+}
+
+.search_bar h3 input {
+    background-color: var(--mainblack);
+    width: 82%;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    color: var(--mainorange);
+    font-family: var(--mainfont);
+}
+
+.search_bar h3 button {
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--maingray);
+}
+
+.products_manager table {
+    width: 80%;
+    position: relative;
+    margin: auto;
+    text-align: center;
+}
+
+.products_manager table thead {
+    font-family: var(--boldfont);
+}
+
+.products_manager table thead th {
+    padding-bottom: 10px;
+}
+
+.products_manager table tbody {
+    font-family: var(--mainfont);
+    font-size: 14px;
+}
+
+.products_manager table tbody td {
+    padding-bottom: 5px;
+}
+
+.products_manager table tbody td form .update {
+    text-decoration: none;
+    color: var(--maingray);
+    background-color: var(--secondorange);
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-family: var(--boldfont);
+    font-size: 13px;
+    transition: all ease .3s;
+    margin-left: 7px;
+}
+
+.products_manager table tbody td form .delete {
+    background-color: var(--mainorange);
+    border: none;
+    padding: 5px 15px;
+    color: var(--maingray);
+    border-radius: 10px;
+    margin-left: 7px;
+    font-family: var(--boldfont);
+    font-size: 13px;
+    transition: all ease .3s;
+    cursor: pointer;
+}
+
+.products_manager table tbody td form button:hover {
+    background-color: var(--mainblack);
+    color: var(--maingray);
+}
+
+.products_manager table tbody td form a {
+    text-decoration: none;
+    color: var(--maingray);
+    background-color: var(--secondgray);
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-family: var(--boldfont);
+    font-size: 13px;
+    transition: all ease .3s;
+}
+
+.products_manager table tbody td form a:hover {
+    background-color: var(--mainblack);
+    color: var(--maingray);
+}
+
+/*----------dashboard_manage_products_details------------*/
+.product_details {
+    width: 550px;
+    height: 620px;
+    position: relative;
+    margin: auto;
+    background-color: var(--mainblack);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.product_details .product_id_category {
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product_id_category h4 {
+    font-family: var(--boldfont);
+    font-size: 18px;
+    color: var(--mainblack);
+    background-color: var(--maingray);
+    border-radius: 15px;
+    width: 25%;
+    padding: 3px 2px;
+    text-align: center;
+}
+
+.product_id_category h4 span {
+    color: var(--mainorange);
+}
+
+.product_id_category h5 {
+    font-family: var(--boldfont);
+    font-size: 16px;
+    color: var(--mainblack);
+    background-color: var(--maingray);
+    border-radius: 15px;
+    width: 65%;
+    padding: 3px 2px;
+    text-align: center;
+}
+
+.product_id_category h5 span {
+    color: var(--mainorange);
+}
+
+.product_details form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product_details button {
+    width: 49%;
+    border-radius: 15px;
+    border: none;
+    height: 30px;
+    background-color: var(--mainorange);
+    color: var(--maingray);
+    font-family: var(--mainfont);
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s all ease;
+    padding: 3px 2px;
+}
+
+.product_details button:hover {
+    background-color: var(--maingray);
+    color: var(--mainblack);
+}
+
+.product_details a {
+    width: 49%;
+    border-radius: 15px;
+    border: none;
+    height: 30px;
+    background-color: var(--secondorange);
+    color: var(--maingray);
+    font-family: var(--mainfont);
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s all ease;
+    padding: 3px 2px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.product_details button:hover {
+    background-color: var(--maingray);
+    color: var(--mainblack);
+}
+
+.product_details form a:hover {
+    background-color: var(--maingray);
+    color: var(--mainblack);
+}
+
+.product_details h3 {
+    font-family: var(--boldfont);
+    font-size: 16px;
+    color: var(--mainblack);
+    background-color: var(--maingray);
+    border-radius: 15px;
+    width: 100%;
+    padding: 3px 20px;
+    margin-bottom: 15px;
+}
+
+.product_details h3 span {
+    color: var(--mainorange);
+}
+
+.product_details p {
+    font-family: var(--boldfont);
+    font-size: 16px;
+    color: var(--mainblack);
+    background-color: var(--maingray);
+    border-radius: 15px;
+    width: 100%;
+    padding: 3px 20px;
+    margin-bottom: 15px;
+}
+
+.product_details p span {
+    color: var(--mainorange);
+    font-family: var(--mainfont);
+    font-size: 13px;
+}
+
+/*----------dashboard_product_update------------*/
+.product_update {
+    width: 550px;
+    height: 620px;
+    position: relative;
+    margin: auto;
+    background-color: var(--mainblack);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.product_update .product_id_category {
+    width: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.product_update button {
+    width: 100%;
+    border-radius: 15px;
+    border: none;
+    height: 30px;
+    background-color: var(--mainorange);
+    color: var(--maingray);
+    font-family: var(--mainfont);
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s all ease;
+    padding: 3px 2px;
+}
+
+.product_update button:hover {
+    background-color: var(--maingray);
+    color: var(--mainblack);
+}
+
+.product_update h3 {
+    font-family: var(--boldfont);
+    font-size: 16px;
+    color: var(--mainblack);
+    background-color: var(--maingray);
+    border-radius: 15px;
+    width: 100%;
+    padding: 3px 20px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.product_update h3 span {
+    color: var(--mainorange);
+    margin-left: 10px;
+}
+
+.product_update h3 input,
+.product_update h3 textarea {
+    color: var(--mainorange);
+    border: none;
+    outline: none;
+    width: 80%;
+    font-size: 15px;
+    font-family: var(--boldfont);
+    background-color: var(--maingray);
+    margin-left: 10px;
+}
+
+.product_update h3 textarea {
+    width: 84%;
+}
+
+.product_update h3 textarea::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--maingray);
+    border-radius: 10px;
+}
+
+.product_update h3 textarea::-webkit-scrollbar-thumb {
+    background: var(--mainorange);
+    border-radius: 10px;
+}
+
+/*----------dashboard_add-products------------*/
+.product_add {
+    width: 60%;
+    height: 83%;
+    margin: auto;
+    position: relative;
+    background-color: var(--mainblack);
+    border-radius: 20px;
+    padding: 25px 20px;
+}
+
+.product_add h3 {
+    font-family: var(--boldfont);
+    width: 100%;
+    color: var(--mainblack);
+    font-size: 16px;
+    background-color: var(--maingray);
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.product_add h3 input {
+    border: none;
+    border-bottom: 2px var(--mainorange) solid;
+    background-color: transparent;
+    margin-left: 8px;
+    outline: none;
+    font-family: var(--mainfont);
+    font-size: 12px;
+    color: var(--mainblack);
+    width: 200px;
+}
+
+.product_add h3 .file {
+    border: none;
+    width: 300px;
+}
+
+.product_add h3 textarea {
+    border: none;
+    border-bottom: 2px solid var(--mainorange);
+    height: 100px;
+    margin-left: 8px;
+    background-color: transparent;
+    width: 250px;
+    outline: none;
+    margin: 2px;
+    font-family: var(--mainfont);
+    color: var(--mainblack);
+}
+
+.product_add form button {
+    width: 100%;
+    height: 30px;
+    background-color: var(--mainorange);
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: var(--maingray);
+    font-size: 14px;
+    font-family: var(--boldfont);
+    cursor: pointer;
+    transition: .3s all ease;
+}
+
+.product_add form button:hover {
+    color: var(--mainblack);
+    background-color: var(--maingray);
+}
+
+/*----------dashboard_orders_list------------*/
+.dash-box .orders_list {
+    width: 100%;
+    height: 100%;
+}
+
+.orders_list .setuation {
+    width: 85%;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.orders_list .setuation .set_canceled {
+    width: 18%;
+    background-color: rgb(183, 2, 2);
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    transition: all ease .3s;
+}
+
+.setuation .set_canceled:hover {
+    background-color: rgb(228, 136, 136);
+}
+
+.orders_list .setuation .set_inprogress {
+    width: 18%;
+    background-color: rgb(239, 112, 0);
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    transition: all ease .3s;
+}
+
+.setuation .set_inprogress:hover {
+    background-color: rgb(240, 156, 81);
+}
+
+.orders_list .setuation .set_accepted {
+    width: 18%;
+    background-color: rgb(0, 0, 210);
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    transition: all ease .3s;
+}
+
+.setuation .set_accepted:hover {
+    background-color: rgb(112, 112, 199);
+}
+
+.orders_list .setuation .set_delivered {
+    width: 18%;
+    background-color: rgb(6, 171, 6);
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    transition: all ease .3s;
+}
+
+.setuation .set_delivered:hover {
+    background-color: rgb(123, 206, 123);
+}
+
+.orders_list .setuation .history {
+    width: 18%;
+    background-color: rgb(255, 238, 0);
+    text-align: center;
+    text-decoration: none;
+    padding: 20px 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: var(--boldfont);
+    color: var(--mainblack);
+    transition: all ease .3s;
+}
+
+.setuation .history:hover {
+    background-color: rgb(255, 249, 170);
+}
+
+.orders_list .orders_table {
+    background-color: var(--maingray);
+    border-radius: 20px;
+    width: 100%;
+    height: 85%;
+}
+
+.orders_table table {
+    width: 100%;
+    text-align: center;
+}
+
+.orders_table table thead th {
+    padding-bottom: 15px;
+    font-family: var(--boldfont);
+    font-size: 14px;
+}
+
+.orders_table table tbody td {
+    padding-bottom: 8px;
+    font-family: var(--mainfont);
+    font-size: 14px;
+}
+
+.orders_table table tbody td form button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--mainorange);
+    color: var(--maingray);
+    font-family: var(--boldfont);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+.orders_table .accept_btn {
+    background-color: rgb(9, 99, 115);
+}
+
+.orders_table .delivered_btn {
+    background-color: rgb(35, 168, 35);
+}
+
+.orders_table .done_btn {
+    background-color: rgb(255, 238, 0);
+    color: var(--mainblack);
+}
+
+.orders_table table tbody td form button:hover {
+    background-color: var(--mainblack);
+    color: var(--maingray);
+}
+
+.orders_table table tbody td form a {
+    padding: 5px 10px;
+    background-color: var(--secondorange);
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: var(--boldfont);
+    font-size: 12px;
+    color: var(--maingray);
+    transition: all ease .3s;
+}
+
+.orders_table table tbody td form a:hover {
+    background-color: var(--mainblack);
+    color: var(--maingray);
+}
+
+/*----------dashboard_order_details------------*/
+.dash-box .order_details {
+    background-color: var(--mainblack);
+    width: 80%;
+    height: 70%;
+    position: relative;
+    margin: auto;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.order_id {
+    background-color: var(--maingray);
+    color: var(--mainblack);
+    width: 15%;
+    padding: 0 8px;
+    border-radius: 10px;
+    font-family: var(--boldfont);
+}
+
+.order_id span {
+    color: var(--mainorange);
+    font-family: var(--mainfont);
+}
+
+.order_details .informations {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 20px 0;
+}
+
+.informations .user_infos {
+    width: 49%;
+    background-color: var(--maingray);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.informations .product_infos {
+    width: 49%;
+    background-color: var(--maingray);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.user_infos h1 {
+    font-family: var(--boldfont);
+    font-size: 19px;
+    margin-bottom: 3px;
+    color: var(--mainblack);
+    margin-bottom: 8px;
+}
+
+.product_infos h1 {
+    font-family: var(--boldfont);
+    font-size: 19px;
+    margin-bottom: 3px;
+    color: var(--mainblack);
+    margin-bottom: 8px;
+}
+
+.user_infos h3 {
+    font-family: var(--mainfont);
+    font-size: 16px;
+    margin-bottom: 3px;
+    color: var(--mainblack);
+}
+
+.product_infos h3 {
+    font-family: var(--mainfont);
+    font-size: 16px;
+    margin-bottom: 3px;
+    color: var(--mainblack);
+}
+
+.user_infos h3 span {
+    color: var(--mainorange);
+}
+
+.product_infos h3 span {
+    color: var(--mainorange);
+}
+
+.order_details .order_infos {
+    background-color: var(--maingray);
+    padding: 5px 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order_infos h3 {
+    font-family: var(--mainfont);
+    font-size: 16px;
+    margin-bottom: 3px;
+    color: var(--mainblack);
+}
+
+.order_infos h3 span {
+    color: var(--mainorange);
+}
+
+.order_details form {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order_details form button {
+    width: 49%;
+    height: 35px;
+    border-radius: 15px;
+    background-color: var(--mainorange);
+    border: none;
+    cursor: pointer;
+    font-family: var(--boldfont);
+    color: var(--maingray);
+    font-size: 15px;
+}
+
+.order_details form .accept_btn {
+    background-color: rgb(9, 99, 115);
+}
+
+.order_details form .delivered_btn {
+    background-color: rgb(35, 168, 35);
+}
+
+.order_details form .done_btn {
+    background-color: rgb(255, 238, 0);
+    color: var(--mainblack);
+}
+
+/*----------dashboard_contact_mssg------------*/
+.contact_table {
+    width: 100%;
+    height: 100%;
+}
+
+.contact_table table {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--maingray);
+}
+
+.contact_table table thead th {
+    padding-bottom: 10px;
+    font-family: var(--boldfont);
+    font-size: 14px;
+}
+
+.contact_table table tbody td {
+    padding-bottom: 10px;
+    font-family: var(--mainfont);
+    font-size: 12px;
+}
+
+.contact_table table tbody td textarea {
+    border: none;
+    height: 50px;
+    width: 320px;
+    border-radius: 15px;
+    padding: 5px;
+    outline: none;
+}
+
+.contact_table table tbody td form button {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--mainorange);
+    color: var(--maingray);
+    font-family: var(--boldfont);
+    font-size: 14px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: .3s all ease;
+}
+
+.contact_table table tbody td form a {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: var(--secondorange);
+    color: var(--maingray);
+    padding: 6px 10px;
+    font-family: var(--boldfont);
+    font-size: 14px;
+    transition: .3s all ease;
+}
+
+.contact_table table tbody td form button:hover,
+.contact_table table tbody td form a:hover {
+    color: var(--maingray);
+    background-color: var(--mainblack);
+}
+
+/*----------dashboard_manage_admin------------*/
+.dash-box .admins {
+    width: 100%;
+    height: 100%;
+}
+
+.dash-box .admins table {
+    width: 100%;
+    text-align: center;
+    background-color: var(--maingray);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.admins table thead tr th {
+    font-family: var(--boldfont);
+    font-size: 15px;
+    border-bottom: 2px solid var(--mainblack);
+}
+
+.admins table tbody tr td {
+    font-family: var(--mainfont);
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+.admins table tbody tr td form button {
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    font-family: var(--boldfont);
+    font-size: 14px;
+    color: var(--maingray);
+    background-color: var(--mainorange);
+    margin-right: 5px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+.admins table tbody tr td form a {
+    width: 60px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: var(--boldfont);
+    font-size: 14px;
+    color: var(--maingray);
+    background-color: var(--mainorange);
+    padding: 5px 10px;
+    transition: all ease .3s;
+}
+
+.admins table tbody tr td form button:hover,
+.admins table tbody tr td form a:hover {
+    background-color: var(--mainblack);
+    color: var(--maingray);
+}
+
+/*----------login------------*/
+.dash_login {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.dash_login .dash_login_container {
+    width: 80%;
+    height: 50vh;
+    position: relative;
+    margin: auto;
+    display: flex;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.dash_login_container .dash_login-content {
+    padding: 15px 20px;
+    width: 100%;
+    background-color: var(--maingray);
+}
+
+.dash_login-content .title {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    padding: 20px 40px 25px 25px;
+    color: var(--mainblack);
+}
+
+.dash_login-content .title h3 {
+    font-family: var(--boldfont);
+    font-size: 30px;
+}
+
+.dash_login-content .title p {
+    font-family: var(--lightfont);
+    font-size: 16px;
+}
+
+.close {
+    background-color: var(--mainblack);
+    color: var(--maingray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    font-size: 25px;
+    cursor: pointer;
+    position: absolute;
+    right: -0.1%;
+    top: -0.1%;
+    border-bottom-left-radius: 20px;
+}
+
+/*----------login-form------------*/
+.dash_login-content form {
+    width: 100%;
+    padding: 0 25px;
+    margin-bottom: 5px;
+}
+
+.dash_login-content form .login-box {
+    position: relative;
+    width: 100%;
+    height: 30px;
+    border-bottom: 2px solid var(--mainblack);
+    margin: auto;
+    margin-bottom: 40px;
+    font-family: var(--mainfont);
+}
+
+.login-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 14px;
+    font-weight: 300;
+    transition: .5s;
+}
+
+.login-box input:focus~label,
+.login-box input:valid~label {
+    top: -5px;
+}
+
+.login-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #000;
+    font-family: var(--lightfont);
+    padding: 0 35px 0 5px;
+}
+
+.login-box .span-icon {
+    position: absolute;
+    right: 8px;
+    top: -8px;
+    font-size: 20px;
+    line-height: 55px;
+    color: var(--mainblack);
+}
+
+.dash_login-content form .login-form-btn {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    margin: auto;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: var(--secondblack);
+    border-radius: 6px;
+    color: var(--maingray);
+    font-family: var(--lightfont);
+    font-weight: 800;
+    font-size: 14px;
+    transition: .4s all ease;
+}
+
+form .login-form-btn:hover {
+    background-color: var(--secondorange);
+    color: var(--maingray);
+}
